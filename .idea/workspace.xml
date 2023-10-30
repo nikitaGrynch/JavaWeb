@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/AuthTokenDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/CallMeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/AuthToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/CallMe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/models/SignupFormModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/filters/CharsetFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/filters/CultureFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/filters/UserAgentFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/IocContextListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/LoggingModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/RouterModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/ServicesModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/culture/ResourceProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/culture/StringResourceProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/db/DbProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/db/PlanetDbProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/formparse/FormParseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/formparse/FormParseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/formparse/MixedFormParseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/HashService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/Md5HashService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/Md5OldHashService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/Sha1HashService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/Sha2HashService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/kdf/DigestHashKdfService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/kdf/KdfService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/random/RandomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/random/RandomServiceV1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/random/RandomServiceV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/AuthServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/DbServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/FiltersServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/HomeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/IocServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/JspServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/SignupServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/SpaServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/TemplatesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/WsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logging.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/N*P.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/template1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/_layout.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/about.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/filters.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ioc.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/signup.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spa.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/site.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/site.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/avatar/no-photo.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2XUDFvN6Fh71WL3z4czUPlGxYmy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/grynch/IdeaProjects/ITStep/JavaWeb",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat 8.5.93" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.93" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="JavaWeb:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/JavaWeb" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="173df7da-fd10-46a7-8881-d144f7eee0ca" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56639" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="JavaWeb:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="" />
+      <created>1698674666491</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698674666491</updated>
+      <workItem from="1698674667787" duration="387000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

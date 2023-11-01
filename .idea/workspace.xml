@@ -1,84 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="JavaWeb:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/AuthTokenDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/CallMeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/AuthToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/CallMe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/models/SignupFormModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/filters/CharsetFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/filters/CultureFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/filters/UserAgentFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/IocContextListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/LoggingModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/RouterModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/ServicesModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/culture/ResourceProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/culture/StringResourceProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/db/DbProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/db/PlanetDbProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/formparse/FormParseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/formparse/FormParseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/formparse/MixedFormParseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/HashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/Md5HashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/Md5OldHashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/Sha1HashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/hash/Sha2HashService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/kdf/DigestHashKdfService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/kdf/KdfService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/random/RandomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/random/RandomServiceV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/random/RandomServiceV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/AuthServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/DbServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/FiltersServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/HomeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/IocServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/JspServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/SignupServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/SpaServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/TemplatesServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/servlets/WsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logging.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/N*P.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/template1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/_layout.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/about.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/filters.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/fragment.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ioc.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/signup.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spa.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/site.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/avatar/no-photo.png" afterDir="false" />
+    <list default="true" id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="JavaWeb">
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketConfigurator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/ioc/IocContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/IocContextListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "nikitaGrynch"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bdb63541-df1d-4fd7-9159-c979680fce92" />
+        <option name="url" value="https://github.com/nikitaGrynch/JavaWeb.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
@@ -100,9 +76,15 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.93" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.93" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -200,11 +182,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1698674666491</updated>
-      <workItem from="1698674667787" duration="387000" />
+      <workItem from="1698674667787" duration="11337000" />
     </task>
+    <task id="LOCAL-00001" summary="JavaWeb">
+      <option name="closed" value="true" />
+      <created>1698675247541</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698675247541</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="JavaWeb" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaWeb" />
   </component>
 </project>

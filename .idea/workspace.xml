@@ -9,12 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="JavaWeb">
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketConfigurator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketModule.java" afterDir="false" />
+    <list default="true" id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="HW_30_10_23">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/ioc/IocContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/IocContextListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/dao/AuthTokenDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/AuthTokenDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/AuthToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/AuthToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,12 +33,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "nikitaGrynch"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nikitaGrynch&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -56,9 +57,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2XUDFvN6Fh71WL3z4czUPlGxYmy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -77,7 +78,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -183,6 +190,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698674666491</updated>
       <workItem from="1698674667787" duration="11337000" />
+      <workItem from="1698839567276" duration="8562000" />
     </task>
     <task id="LOCAL-00001" summary="JavaWeb">
       <option name="closed" value="true" />
@@ -192,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698675247541</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="HW_30_10_23">
+      <option name="closed" value="true" />
+      <created>1698842148187</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698842148187</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +227,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JavaWeb" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaWeb" />
+    <MESSAGE value="HW_30_10_23" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW_30_10_23" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

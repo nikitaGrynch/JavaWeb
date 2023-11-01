@@ -2,8 +2,10 @@ package step.learning.ws;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.inject.Inject;
 import step.learning.dao.AuthTokenDao;
+import step.learning.dto.entities.AuthToken;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
@@ -49,7 +51,25 @@ public class WebsocketController {
 
     @OnMessage
     public void onMessage(String message, Session session){
-        broadcast(message + session.getUserProperties().get("culture"));
+        JsonObject request = JsonParser.parseString(message).getAsJsonObject();
+        String command = request.get("command").getAsString();
+        String data = request.get("data").getAsString();
+        switch (command){
+            case "auth":
+                AuthToken token = authTokenDao.getTokenByBearer(data);
+                if(token == null){
+                    sendToSession(session, 403, "Token rejected");
+                    return;
+                }
+                session.getUserProperties().put("nik", token.getNik());
+                sendToSession(session, 202, token.getNik());
+                break;
+            case "chat":
+                broadcast(session.getUserProperties().get("nik") + ": " + data);
+                break;
+            default:
+                sendToSession(session, 405, "Command unrecognized");
+        }
     }
 
     @OnError
@@ -57,21 +77,37 @@ public class WebsocketController {
         System.err.println("onError: " + ex.getMessage());
     }
 
+    public static void sendToSession(Session session, int status, String message){
+        JsonObject response = new JsonObject();
+        response.addProperty("status", status);
+        response.addProperty("data", message);
+        try {
+            session.getBasicRemote().sendText(response.toString());
+        } catch (Exception ex) {
+            System.err.println("sendToSession: " + ex.getMessage());
+        }
+    }
+
+    public static void sendToSession(Session session, JsonObject jsonObject){
+        try {
+            session.getBasicRemote().sendText(jsonObject.toString());
+        } catch (Exception ex) {
+            System.err.println("sendToSession: " + ex.getMessage());
+        }
+    }
+
     public static void broadcast(String message) {
+        JsonObject response = new JsonObject();
+        response.addProperty("status", 201);
+        response.addProperty("data", message);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //Date javaDate = formatter.parse("2023-10-25 13:00:00");
+        //Date javaDate = formatter.parse("2023-10-31 21:00:00");
+        Date javaDate = new Date();
+        String formattedDate = formatter.format(javaDate);
+        response.addProperty("date", formattedDate);
         sessions.forEach(session -> {
-            try {
-                JsonObject object = new JsonObject();
-                object.addProperty("text", message);
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                //Date javaDate = formatter.parse("2023-10-25 13:00:00");
-                //Date javaDate = formatter.parse("2023-10-31 21:00:00");
-                Date javaDate = new Date();
-                String formattedDate = formatter.format(javaDate);
-                object.addProperty("date", formattedDate);
-                session.getBasicRemote().sendText(new Gson().toJson(object));
-            } catch (Exception ex) {
-                System.err.println("broadcast: " + ex.getMessage());
-            }
+            sendToSession(session, response);
         });
     }
 }

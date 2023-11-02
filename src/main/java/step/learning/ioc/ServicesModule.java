@@ -42,7 +42,7 @@ public class ServicesModule extends AbstractModule {
     private RandomService injectRandomService() {
         if (randomService == null) {
             randomService = new RandomServiceV1();
-            randomService.seed("initial");
+            randomService.seed(String.valueOf(System.nanoTime()));
         }
         return randomService;
     }

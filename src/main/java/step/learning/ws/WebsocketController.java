@@ -1,11 +1,12 @@
 package step.learning.ws;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.inject.Inject;
 import step.learning.dao.AuthTokenDao;
+import step.learning.dao.ChatDao;
 import step.learning.dto.entities.AuthToken;
+import step.learning.dto.entities.ChatMessage;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
@@ -24,14 +25,17 @@ public class WebsocketController {
     private static final Set<Session> sessions =
             Collections.synchronizedSet(new HashSet<>());
     private final AuthTokenDao authTokenDao;
+    private final ChatDao chatDao;
 
     @Inject
-    public WebsocketController(AuthTokenDao authTokenDao) {
+    public WebsocketController(AuthTokenDao authTokenDao, ChatDao chatDao) {
         this.authTokenDao = authTokenDao;
+        this.chatDao = chatDao;
     }
 
     @OnOpen
     public void onOpen(Session session, EndpointConfig sec){
+        chatDao.install();
         String culture = (String) sec.getUserProperties().get("culture");
         if (culture == null){
             try {
@@ -55,18 +59,24 @@ public class WebsocketController {
         String command = request.get("command").getAsString();
         String data = request.get("data").getAsString();
         switch (command){
-            case "auth":
+            case "auth": {
                 AuthToken token = authTokenDao.getTokenByBearer(data);
-                if(token == null){
+                if (token == null) {
                     sendToSession(session, 403, "Token rejected");
                     return;
                 }
-                session.getUserProperties().put("nik", token.getNik());
+                session.getUserProperties().put("token", token);
                 sendToSession(session, 202, token.getNik());
+                broadcast(token.getNik() + " joined");
                 break;
-            case "chat":
-                broadcast(session.getUserProperties().get("nik") + ": " + data);
+            }
+            case "chat": {
+                AuthToken token = (AuthToken) session.getUserProperties().get("token");
+                ChatMessage chatMessage = new ChatMessage(token.getSub(), data);
+                chatDao.add(chatMessage);
+                broadcast(token.getNik() + ": " + data);
                 break;
+            }
             default:
                 sendToSession(session, 405, "Command unrecognized");
         }
@@ -81,11 +91,7 @@ public class WebsocketController {
         JsonObject response = new JsonObject();
         response.addProperty("status", status);
         response.addProperty("data", message);
-        try {
-            session.getBasicRemote().sendText(response.toString());
-        } catch (Exception ex) {
-            System.err.println("sendToSession: " + ex.getMessage());
-        }
+        sendToSession(session, response);
     }
 
     public static void sendToSession(Session session, JsonObject jsonObject){

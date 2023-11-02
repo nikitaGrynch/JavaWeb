@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <h1>Websocket</h1>
 <div class="row">
-    <div class="col s6">
-        <input id="chat-input" type="text" value="Hi All" />
-        <button type="button" onclick="sendMessageClick()">Send</button>
+    <div class="col s6" id="chat-block">
+        <b id="chat-nik">Log in...</b>
+        <input id="chat-input" disabled type="text" value="Hi All" />
+        <button id="chat-send" disabled type="button" onclick="sendMessageClick()">Send</button>
         <ul class="collection" id="chat-container"></ul>
     </div>
     <div class="col s6"></div>
@@ -39,25 +40,67 @@
         console.log("onWsClose", e);
     }
     function onWsMessage(e) {
+
         // console.log("onWsMessage", e);
         const msgObj = JSON.parse(e.data);
+
+        switch (msgObj.status){
+            case 201: // broadcast
+                appendChatMessage(msgObj.data, msgObj.date)
+                break;
+            case 202: // token accepted, .data == nik
+                enableChat(msgObj.data);
+                break;
+            case 403: // token rejected
+                disableChat();
+                break;
+            case 405: // command unrecognized
+                break;
+        }
+
+
+    }
+
+    function appendChatMessage(msg, date) {
         const li = document.createElement("li");
-        li.className="collection-item";
+        li.className = "collection-item";
         const div = document.createElement("div");
         const spanText = document.createElement("span");
         div.appendChild(spanText);
-        spanText.innerText = msgObj.data;
-        if(msgObj.hasOwnProperty("date")){
-            const spanDate = document.createElement("span");
-            spanDate.className = "secondary-content";
-            const msgDate = new Date(msgObj.date);
-            const now = new Date();
-            spanDate.innerText = getMsgDateStr(msgDate, now);
-            div.appendChild(spanDate);
-        }
+        spanText.innerText = msg;
+        const spanDate = document.createElement("span");
+        spanDate.className = "secondary-content";
+        const msgDate = new Date(date);
+        const now = new Date();
+        spanDate.innerText = getMsgDateStr(msgDate, now);
+        div.appendChild(spanDate);
+
         li.appendChild(div);
         document.getElementById("chat-container").appendChild(li);
     }
+
+    function enableChat(nik) {
+        const li = document.createElement("li");
+        for(let child of document.getElementById("chat-block").children){
+            child.disabled = false;
+        }
+        // li.className = "collection-item";
+        // li.innerText = nik;
+        document.getElementById("chat-nik").innerText = nik;
+        // document.getElementById("chat-input").disabled = false;
+        // document.getElementById("chat-send").disabled = false;
+        //appendChatMessage(nik + " joined", new Date())
+    }
+
+    function disableChat() {
+        document.getElementById("chat-nik").innerText = "OFF";
+        for(let child of document.getElementById("chat-block").children){
+            child.disabled = true;
+        }
+        // document.getElementById("chat-input").disabled = true;
+        // document.getElementById("chat-send").disabled = true;
+    }
+
     function onWsError(e) {
         console.log("onWsError", e);
     }

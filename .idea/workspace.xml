@@ -9,11 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="HW_30_10_23">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="HW_01_11_23">
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/ChatDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/DaoBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/ChatMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/dao/AuthTokenDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/AuthTokenDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/AuthToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/dto/entities/AuthToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/ioc/ServicesModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/ServicesModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" afterDir="false" />
@@ -190,7 +192,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698674666491</updated>
       <workItem from="1698674667787" duration="11337000" />
-      <workItem from="1698839567276" duration="8562000" />
+      <workItem from="1698839567276" duration="19350000" />
     </task>
     <task id="LOCAL-00001" summary="JavaWeb">
       <option name="closed" value="true" />
@@ -208,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698842148187</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="HW_01_11_23">
+      <option name="closed" value="true" />
+      <created>1698872351604</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698872351604</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +238,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JavaWeb" />
     <MESSAGE value="HW_30_10_23" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW_30_10_23" />
+    <MESSAGE value="HW_01_11_23" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW_01_11_23" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

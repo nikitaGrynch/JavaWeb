@@ -1,11 +1,9 @@
 package step.learning.dao;
 
-import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
-import org.checkerframework.checker.units.qual.A;
 import step.learning.dto.entities.AuthToken;
 import step.learning.dto.entities.User;
 import step.learning.services.db.DbProvider;
@@ -24,7 +22,7 @@ import java.util.logging.Logger;
  * API servlet for authentication and authorization
  */
 @Singleton
-public class AuthTokenDao {
+public class AuthTokenDao extends DaoBase{
     private final DbProvider dbProvider;
     private final String dbPrefix;
     private final Logger logger;
@@ -33,6 +31,7 @@ public class AuthTokenDao {
 
     @Inject
     public AuthTokenDao(DbProvider dbProvider, @Named("db-prefix") String dbPrefix, Logger logger, UserDao userDao) {
+        super(logger, dbProvider);
         this.dbProvider = dbProvider;
         this.dbPrefix = dbPrefix;
         this.logger = logger;
@@ -112,17 +111,6 @@ public class AuthTokenDao {
         return null;
     }
 
-    private Timestamp getDbTimestamp() {
-        try(Statement statement = dbProvider.getConnection().createStatement()){
-            ResultSet resultSet = statement.executeQuery("SELECT CURRENT_TIMESTAMP");
-            resultSet.next();
-            return resultSet.getTimestamp(1);
-        }
-        catch (Exception ex){
-            logger.log(Level.WARNING, ex.getMessage());
-        }
-        return  null;
-    }
 
     /**
      * Create table statement

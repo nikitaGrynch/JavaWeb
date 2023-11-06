@@ -73,8 +73,8 @@
                 appendChatMessage(msgObj.data, msgObj.date)
                 break;
             case 202: // token accepted, .data == nik
-                enableChat(msgObj.data);
                 wsSend("load", "")
+                enableChat(msgObj.data);
                 break;
             case 403: // token rejected
                 disableChat();
@@ -111,6 +111,9 @@
 
         li.appendChild(div);
         document.getElementById("chat-container").appendChild(li);
+        const token = JSON.parse(atob(window.localStorage.getItem("token")));
+        const exp = new Date(token.exp);
+        document.getElementById("chat-token").innerText = "Token expires at " + dateString(exp);
     }
 
     function enableChat(nik) {
@@ -121,6 +124,8 @@
         // li.className = "collection-item";
         // li.innerText = nik;
         document.getElementById("chat-nik").innerText = nik;
+        wsSend("join", "");
+        // appendChatMessage(nik + " joined", new Date());
         // document.getElementById("chat-input").disabled = false;
         // document.getElementById("chat-send").disabled = false;
         //appendChatMessage(nik + " joined", new Date())

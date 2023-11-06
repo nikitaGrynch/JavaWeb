@@ -66,17 +66,28 @@ public class WebsocketController {
                     sendToSession(session, 403, "Token rejected");
                     return;
                 }
+                token = authTokenDao.renewToken(token);
                 session.getUserProperties().put("token", token);
                 sendToSession(session, 202, token.getNik());
-                broadcast(token.getNik() + " joined");
+                //broadcast(token.getNik() + " joined");
                 break;
             }
             case "chat": {
                 AuthToken token = (AuthToken) session.getUserProperties().get("token");
+                token = authTokenDao.renewToken(token);
+                session.getUserProperties().put("token", token);
                 ChatMessage chatMessage = new ChatMessage(token.getSub(), data);
                 chatDao.add(chatMessage);
                 broadcast(token.getNik() + ": " + data);
-                authTokenDao.renewToken(token);
+                break;
+            }
+            case "join": {
+                AuthToken token = (AuthToken) session.getUserProperties().get("token");
+                if (token == null) {
+                    sendToSession(session, 403, "Token rejected");
+                    return;
+                }
+                broadcast(token.getNik() + " joined");
                 break;
             }
             case "load": { // load 10 last messages from db

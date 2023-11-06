@@ -5,12 +5,22 @@ const callMeButton = document.getElementById("db-call-me-button");
     if(callMeButton) callMeButton.addEventListener("click", callMeButtonClick);
     const getAllButton = document.getElementById("db-get-all-button");
     if(getAllButton) getAllButton.addEventListener("click", getAllButtonClick);
-
+const showAll = document.getElementById("db-get-all-with-deleted-button");
+if(showAll){
+    showAll.addEventListener("click", getAllWithDeletedButtonClick);
+    showAll.disabled = true;
+}
 function getAllButtonClick() {
     fetch(window.location.href, {
         method: "LINK"
-    }).then(r => r.json()).then(showCalls);
+    }).then(r => r.json()).then(showCalls).then(() => showAll.disabled = false);
 }
+
+ function getAllWithDeletedButtonClick() {
+     fetch(window.location.href, {
+         method: "UNLINK"
+     }).then(r => r.json()).then(showCalls);
+ }
 function showCalls( json ) {
     const container = document.getElementById("db-get-all-container");
     if( ! container ) throw "#db-get-all-container not found" ;
@@ -52,12 +62,18 @@ function showCalls( json ) {
         if( typeof call.callMoment == 'undefined' || call.callMoment == null ) {
             // кнопка "подзвонити"
             const btn = document.createElement('button');
-            btn.appendChild(document.createTextNode("call"));
             btn.classList.add('btn');
             btn.classList.add('waves-effect');
             btn.classList.add('waves-light');
             btn.classList.add('deep-orange');
-            btn.addEventListener('click', makeCallClick);
+            if(typeof call.deleteMoment == "undefined" || call.deleteMoment == null){
+                btn.addEventListener('click', makeCallClick);
+                btn.appendChild(document.createTextNode("call"));
+            }
+            else{
+                btn.addEventListener('click', restoreClick);
+                btn.appendChild(document.createTextNode("restore"));
+            }
             btn.setAttribute( 'data-call-id', call.id ) ;
             td4.appendChild(btn);
         }
@@ -68,14 +84,19 @@ function showCalls( json ) {
         tr.appendChild(td4);
         // Delete button
         const td5 = document.createElement('td');
-        const btn5 = document.createElement('button');
-        btn5.appendChild(document.createTextNode("X"));
-        btn5.classList.add('btn');
-        btn5.classList.add('white-text');
-        btn5.classList.add('deep-purple');
-        btn5.addEventListener('click', deleteClick);
-        btn5.setAttribute( 'data-call-id', call.id ) ;
-        td5.appendChild(btn5);
+        if(typeof call.deleteMoment == "undefined" || call.deleteMoment == null) {
+            const btn5 = document.createElement('button');
+            btn5.appendChild(document.createTextNode("X"));
+            btn5.classList.add('btn');
+            btn5.classList.add('white-text');
+            btn5.classList.add('deep-purple');
+            btn5.addEventListener('click', deleteClick);
+            btn5.setAttribute('data-call-id', call.id);
+            td5.appendChild(btn5);
+        }
+        else{
+            td5.appendChild(document.createTextNode(call.deleteMoment))
+        }
         tr.appendChild(td5);
 
         tbody.appendChild(tr);
@@ -106,6 +127,7 @@ function deleteClick(e){
 function makeCallClick(e){
     const  callId = e.target.getAttribute('data-call-id');
     if(confirm("Make call to order " + callId)){
+        console.log(callId)
         fetch(window.location.href + "?call-id=" + callId, {
             method: "CALL"
         }).then(r => r.json()).then(j => {
@@ -118,6 +140,15 @@ function makeCallClick(e){
             M.toast({html: `Your order #${j.id}`});
         })
     }
+}
+
+function restoreClick(e) {
+    const  callId = e.target.getAttribute('data-call-id');
+    fetch(window.location.href + "?call-id=" + callId, {
+        method: "RESTORE"
+    }).then(r => r.json()).then(j => {
+        getAllWithDeletedButtonClick()
+    })
 }
 
 function callMeButtonClick() {

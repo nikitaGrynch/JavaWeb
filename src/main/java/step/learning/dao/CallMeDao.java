@@ -66,6 +66,10 @@ public class CallMeDao {
         return getAll(false);
     }
 
+    public List<CallMe> getAllWithDeleted(){
+        return getAll(true);
+    }
+
     public List<CallMe> getAll(boolean includeDeleted) {
         List<CallMe> result = new ArrayList<>();
         String sql = "SELECT * FROM " + dbPrefix + "call_me";
@@ -85,7 +89,7 @@ public class CallMeDao {
     }
 
     public CallMe getById(String id){
-        return getById(id, false);
+        return getById(id, true);
     }
 
     public CallMe getById(String id, boolean includeDeleted) {
@@ -104,6 +108,18 @@ public class CallMeDao {
             logger.log(Level.WARNING, ex.getMessage() + " -- " + sql);
         }
         return null;
+    }
+
+    public boolean restoreById(String id){
+        String sql = "UPDATE " + dbPrefix + "call_me SET delete_moment = NULL WHERE id = ?";
+        try (PreparedStatement prep = dbProvider.getConnection().prepareStatement(sql)) {
+            prep.setString(1, id);
+            prep.execute();
+            return true;
+        } catch (SQLException ex) {
+            logger.log(Level.WARNING, ex.getMessage() + " -- " + sql);
+        }
+        return false;
     }
 
     public boolean setCallMoment(CallMe item) {

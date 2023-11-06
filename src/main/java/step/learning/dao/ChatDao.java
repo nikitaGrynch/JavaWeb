@@ -7,6 +7,7 @@ import step.learning.dto.entities.ChatMessage;
 import step.learning.services.db.DbProvider;
 
 import java.sql.*;
+import java.util.*;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +25,26 @@ public class ChatDao extends DaoBase{
         this.logger = logger;
     }
 
+    public List<ChatMessage> getLastMessages() {
+        return getLastMessages(10);
+    }
+
+    public List<ChatMessage> getLastMessages(int count) {
+        LinkedList<ChatMessage> lastMessages = new LinkedList<>();
+
+        String sql = "SELECT m.*, u.`login` AS `sender_nik` FROM " + dbPrefix + "chat_messages m JOIN " +
+                dbPrefix + "users u ON m.sender_id = u.id ORDER BY moment DESC LIMIT " + count;
+        try (Statement statement = dbProvider.getConnection().createStatement();
+             ResultSet resultSet = statement.executeQuery(sql);
+        ) {
+            while (resultSet.next()) {
+                lastMessages.addFirst(new ChatMessage(resultSet));
+            }
+        } catch (SQLException ex) {
+            logger.log(Level.WARNING, ex.getMessage() + "---" + sql);
+        }
+        return lastMessages;
+    }
     public boolean add(ChatMessage chatMessage){
          chatMessage.setMoment( new Date(super.getDbTimestamp().getTime()));
          chatMessage.setId(super.getDbIdentity());

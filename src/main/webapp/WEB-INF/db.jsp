@@ -53,7 +53,11 @@
 <div class="row">
   <button type="button" id="db-get-all-button" class="waves-effect waves-light btn">
     <i class="material-icons right">table_chart</i>
-    View all
+    View calls
+  </button>
+  <button type="button" id="db-get-all-with-deleted-button" class="waves-effect waves-light btn">
+    <i class="material-icons right">table_chart</i>
+    Show all cals
   </button>
 </div>
 <div id="db-get-all-container"></div>

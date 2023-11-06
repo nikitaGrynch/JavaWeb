@@ -1,5 +1,6 @@
 package step.learning.ws;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.inject.Inject;
@@ -75,6 +76,24 @@ public class WebsocketController {
                 ChatMessage chatMessage = new ChatMessage(token.getSub(), data);
                 chatDao.add(chatMessage);
                 broadcast(token.getNik() + ": " + data);
+                authTokenDao.renewToken(token);
+                break;
+            }
+            case "load": { // load 10 last messages from db
+                AuthToken token = (AuthToken) session.getUserProperties().get("token");
+                if(token != null){
+                    JsonObject response = new JsonObject();
+                    response.addProperty("status", 200);
+                    JsonArray array = new JsonArray();
+                    for(ChatMessage chatMessage : chatDao.getLastMessages()){
+                        array.add(chatMessage.toJsonObject());
+                    }
+                    response.add("data", array);
+                    sendToSession(session, response);
+                }
+                else {
+                    sendToSession(session, 403, "Token rejected");
+                }
                 break;
             }
             default:

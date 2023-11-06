@@ -17,7 +17,8 @@ import java.util.Base64;
 
 @Singleton
 public class AuthServlet extends HttpServlet {
-    private final static Gson gson = new GsonBuilder().serializeNulls().create();
+    private final static Gson gson = new GsonBuilder().serializeNulls()
+            .setDateFormat("EEE, d MMM yyyy HH:mm:ss 'UTC'").create();
     private final UserDao userDao;
     private final AuthTokenDao authTokenDao;
 

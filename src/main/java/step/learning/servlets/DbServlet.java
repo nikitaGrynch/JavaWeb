@@ -47,6 +47,7 @@ public class DbServlet extends HttpServlet {
             case "LINK" : doLink(req, resp); break;
             case "PATCH" : doPatch(req, resp); break;
             case "UNLINK" : doUnlink(req, resp); break;
+            case "RESTORE": doRestore(req, resp); break;
             default: super.service(req, resp);
         }
     }
@@ -79,7 +80,12 @@ public class DbServlet extends HttpServlet {
         }
     }
     protected void doUnlink(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("UNLINK works");
+        //resp.getWriter().println("UNLINK works");
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        resp.setContentType("application/json");
+        resp.getWriter().print(gson.toJson(
+                callMeDao.getAllWithDeleted()
+        ));
     }
     protected void doLink(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Gson gson = new GsonBuilder().serializeNulls().create();
@@ -87,6 +93,25 @@ public class DbServlet extends HttpServlet {
         resp.getWriter().print(gson.toJson(
                 callMeDao.getAll()
         ));
+    }
+    protected void doRestore(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        resp.setContentType("application/json");
+        String callId = req.getParameter("call-id");
+        if(callId == null){
+            resp.setStatus(400);
+            resp.getWriter().print("\"Missing required URL-parameter: 'call-id'\"");
+            return;
+        }
+       if(callMeDao.restoreById(callId)){
+           resp.getWriter().print(gson.toJson(
+                   callMeDao.getAll(true)
+           ));
+       }
+       else{
+           resp.setStatus(404);
+           resp.getWriter().print("\"Requested 'call-id' not found\"");
+       }
     }
     protected void doPatch(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");

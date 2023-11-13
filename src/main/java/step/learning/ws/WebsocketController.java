@@ -1,8 +1,6 @@
 package step.learning.ws;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import com.google.inject.Inject;
 import step.learning.dao.AuthTokenDao;
 import step.learning.dao.ChatDao;
@@ -13,10 +11,7 @@ import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @ServerEndpoint(
         value = "/chat",     // address: ws://localhost.../chat
@@ -27,6 +22,8 @@ public class WebsocketController {
             Collections.synchronizedSet(new HashSet<>());
     private final AuthTokenDao authTokenDao;
     private final ChatDao chatDao;
+
+    private final static Gson gson = new GsonBuilder().serializeNulls().create();
 
     @Inject
     public WebsocketController(AuthTokenDao authTokenDao, ChatDao chatDao) {
@@ -66,7 +63,6 @@ public class WebsocketController {
                     sendToSession(session, 403, "Token rejected");
                     return;
                 }
-                token = authTokenDao.renewToken(token);
                 session.getUserProperties().put("token", token);
                 sendToSession(session, 202, token.getNik());
                 //broadcast(token.getNik() + " joined");
@@ -76,6 +72,9 @@ public class WebsocketController {
                 AuthToken token = (AuthToken) session.getUserProperties().get("token");
                 token = authTokenDao.renewToken(token);
                 session.getUserProperties().put("token", token);
+                String jsonToken = gson.toJson(token);
+                String encodedToken = Base64.getUrlEncoder().encodeToString(jsonToken.getBytes());
+                sendToSession(session, 203, encodedToken);
                 ChatMessage chatMessage = new ChatMessage(token.getSub(), data);
                 chatDao.add(chatMessage);
                 broadcast(token.getNik() + ": " + data);

@@ -76,6 +76,9 @@
                 wsSend("load", "")
                 enableChat(msgObj.data);
                 break;
+            case 203:
+                refreshToken(msgObj.data);
+                break;
             case 403: // token rejected
                 disableChat();
                 break;
@@ -84,6 +87,15 @@
         }
 
 
+    }
+
+    function refreshToken(token){
+        if(token) {
+            window.localStorage.setItem("token", token);
+            const tokenObj = JSON.parse(atob(token));
+            const exp = new Date(tokenObj.exp);
+            document.getElementById("chat-token").innerText = "Token expires at " + dateString(exp);
+        }
     }
 
     function loadChatMessages(arr){

@@ -9,9 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="HW_20_10_23">
+    <list default="true" id="96c0fef5-b3e3-407d-a9ed-7d45d3644ee3" name="Changes" comment="HW_6_11_23">
+      <change afterPath="$PROJECT_DIR$/src/main/java/step/learning/filters/DbFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/step/learning/services/hash/HashServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/step/learning/services/random/RandomServiceV1Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/dao/AuthTokenDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/dao/AuthTokenDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/ioc/RouterModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/ioc/RouterModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/services/random/RandomServiceV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/services/random/RandomServiceV1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ws.jsp" afterDir="false" />
     </list>
@@ -24,6 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -65,9 +73,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/Users/grynch/IdeaProjects/ITStep/JavaWeb",
     "node.js.detected.package.eslint": "true",
@@ -88,8 +99,47 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/imgs" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="step.learning.services.hash" />
+      <recent name="step.learning.services.random" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.93">
+    <configuration name="RandomServiceV1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="step.learning.services.random.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="step.learning.services.random" />
+      <option name="MAIN_CLASS_NAME" value="step.learning.services.random.RandomServiceV1Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="step.learning.services in JavaWeb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="step.learning.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="step.learning.services" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.93" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.93" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
@@ -177,6 +227,12 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.step.learning.services in JavaWeb" />
+        <item itemvalue="JUnit.RandomServiceV1Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -187,7 +243,8 @@
       <option name="presentableId" value="Default" />
       <updated>1698674666491</updated>
       <workItem from="1698674667787" duration="11337000" />
-      <workItem from="1698839567276" duration="41680000" />
+      <workItem from="1698839567276" duration="42399000" />
+      <workItem from="1699362712403" duration="12358000" />
     </task>
     <task id="LOCAL-00001" summary="JavaWeb">
       <option name="closed" value="true" />
@@ -229,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699283123055</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="HW_6_11_23">
+      <option name="closed" value="true" />
+      <created>1699311303378</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699311303378</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,18 +317,8 @@
     <MESSAGE value="HW_01_11_23" />
     <MESSAGE value="HW_02_11_23" />
     <MESSAGE value="HW_20_10_23" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW_20_10_23" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/step/learning/ws/WebsocketController.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="HW_6_11_23" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW_6_11_23" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

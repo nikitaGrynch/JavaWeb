@@ -3,12 +3,14 @@ package step.learning.ioc;
 import com.google.inject.servlet.ServletModule;
 import step.learning.filters.CharsetFilter;
 import step.learning.filters.CultureFilter;
+import step.learning.filters.DbFilter;
 import step.learning.filters.UserAgentFilter;
 import step.learning.servlets.*;
 
 public class RouterModule extends ServletModule {
     @Override
     protected void configureServlets() {
+        filter("/*").through(DbFilter.class);
         filter("/*").through(CharsetFilter.class);
         filter("/*").through(UserAgentFilter.class);
         filter("/*").through(CultureFilter.class);

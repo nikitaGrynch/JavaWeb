@@ -116,7 +116,7 @@ public class AuthTokenDao extends DaoBase{
         try (PreparedStatement prep = dbProvider.getConnection().prepareStatement(sql)) {
             prep.setString(1, token.getJti());
             prep.executeUpdate();
-            token.setExp(new Date(token.getExp().getTime() + 1000L * 60 * 60 * 12));
+            token.setExp(new Date(getDbTimestamp().getTime() + 1000L * 60 * 60 * 12));
             return token;
         } catch (Exception e) {
             logger.log(Level.WARNING, e.getMessage() + " -- " + sql);
